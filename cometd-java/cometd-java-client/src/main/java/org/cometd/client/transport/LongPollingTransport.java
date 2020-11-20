@@ -85,7 +85,7 @@ public class LongPollingTransport extends HttpClientTransport {
         }
         setMaxNetworkDelay(defaultMaxNetworkDelay);
 
-        _maxMessageSize = getOption(MAX_MESSAGE_SIZE_OPTION, getOption(MAX_BUFFER_SIZE_OPTION, 1024 * 1024));
+        _maxMessageSize = getOption(MAX_MESSAGE_SIZE_OPTION, getOption(MAX_BUFFER_SIZE_OPTION, 1024 * 1024 * 10));
 
         Pattern uriRegexp = Pattern.compile("(^https?://(((\\[[^\\]]+\\])|([^:/\\?#]+))(:(\\d+))?))?([^\\?#]*)(.*)?");
         Matcher uriMatcher = uriRegexp.matcher(getURL());
